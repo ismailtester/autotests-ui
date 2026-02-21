@@ -1,6 +1,9 @@
 from playwright.sync_api import sync_playwright, expect
+import pytest
 
 # Конструкция with контекстный менеджер который закрывает после завершения скрипта браузер
+@pytest.mark.regression
+@pytest.mark.authorization
 def test_wrong_email_or_password_authorization():
     with sync_playwright() as playwright:
         chromium = playwright.chromium.launch(headless=False)

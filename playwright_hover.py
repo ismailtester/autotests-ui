@@ -10,4 +10,5 @@ with sync_playwright() as playwright:
     registration_button = page.get_by_test_id('login-page-registration-link')
     registration_button.hover()
 
+
     page.wait_for_timeout(5000)
